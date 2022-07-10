@@ -1,8 +1,11 @@
 package com.mycompany.gestaograficos;
 
+import com.mycompany.view.GraficoTesteView;
+
 public class Principal {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        new GraficoTesteView().setVisible(true);
     }
 }
