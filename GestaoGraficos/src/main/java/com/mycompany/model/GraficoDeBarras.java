@@ -1,15 +1,22 @@
 package com.mycompany.model;
 
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
-import org.jfree.data.category.DefaultCategoryDataset;
 
 
 public class GraficoDeBarras extends AbstractGrafico {
     
 
-    private CategoryDataset dataset = new DefaultCategoryDataset(); 
+    private CategoryDataset dataset;
     private JFreeChart grafico;
+
+    public GraficoDeBarras(String titulo, String tituloHorizontal, String tituloVertical, CategoryDataset dataset, PlotOrientation orientacao, boolean legenda, JFreeChart grafico) {
+        super(titulo, tituloHorizontal, tituloVertical, orientacao, legenda);
+        this.dataset = dataset;
+        this.grafico = grafico;
+    }
+    
     
 
     

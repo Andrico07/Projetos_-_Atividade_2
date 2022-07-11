@@ -3,6 +3,7 @@ package com.mycompany.decorator;
 import com.mycompany.model.AbstractGrafico;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 
 
@@ -14,14 +15,9 @@ public abstract class GraficoDecorator extends AbstractGrafico {
     
 
     public GraficoDecorator(AbstractGrafico wrappee) {
-        this.titulo = wrappee.getTitulo();
-        this.tituloHorizontal = wrappee.getTituloHorizontal();
-        this.tituloVertical = wrappee.getTituloVertical();
-        this.orientacao = wrappee.getOrientacao();
-        this.legenda = wrappee.isLegenda();
+        super(wrappee.getTitulo(), wrappee.getTituloHorizontal(), wrappee.getTituloVertical(), wrappee.getOrientacao(), wrappee.isLegenda());
         this.wrappee = wrappee;
     }
-
 
     
     public JFreeChart decorarGrafico(CategoryDataset dataset) {

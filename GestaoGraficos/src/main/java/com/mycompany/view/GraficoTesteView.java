@@ -25,7 +25,7 @@ public class GraficoTesteView extends javax.swing.JFrame {
         
         diretor.criarGrafico(pessoas);
         
-        ChartPanel painel = new ChartPanel(builder.getGraficoDeBarras().getGraficoDeBarras());
+        ChartPanel painel = new ChartPanel(diretor.criarGrafico(pessoas).getGrafico());
         
         
         this.jpnGrafico.setLayout(new BorderLayout());

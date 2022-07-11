@@ -10,40 +10,29 @@ import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 
-public class GraficoDeBarrasBuilder implements IBuilder {
+public class GraficoDeBarrasBuilder extends Builder {
     
-    private String titulo;
-    private boolean legenda;
-    private String tituloVertical;
-    private String tituloHorizontal;
-    private CategoryDataset dataset = new DefaultCategoryDataset();
-    private PlotOrientation orientacao;
     
 
-    @Override
-    public void reset() {
-        this.graficoDeBarras = new GraficoDeBarras();
-    }
-    
     @Override
     public void setTitulo(String titulo) {
-        graficoDeBarras.
-    }
-
-    @Override
-    public void setTituloVertical(String tituloVertical) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.titulo = titulo;
     }
 
     @Override
     public void setTituloHorizontal(String tituloHorizontal) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.tituloHorizontal = tituloHorizontal;
+    }
+
+    @Override
+    public void setTituloVertical(String tituloVertical) {
+        this.tituloVertical = tituloVertical;
     }
 
     @Override
     public void criarDataset(ArrayList<Pessoa> pessoas) {
         
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset = new DefaultCategoryDataset();
         
         int soltM = 0;
         int soltF = 0;
@@ -66,37 +55,31 @@ public class GraficoDeBarrasBuilder implements IBuilder {
         dataset.addValue(casM, "Homem Casado(a)", "");
         dataset.addValue(casF, "Mulher Casado(a)", "");
         
-        this.graficoDeBarras.setDataset(dataset);
-        
     }
     
     @Override
     public void setOrientacao(PlotOrientation orientacao) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.orientacao = orientacao;
     }
-    
+
     @Override
     public void setLegenda(boolean legenda) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.legenda = legenda;
     }
 
     @Override
     public void criarGrafico() {
         
-        JFreeChart graficoDeBarrasChart = ChartFactory.createBarChart(" ", 
-                " ",
-                " ",
-                this.graficoDeBarras.getDataset(),
-                PlotOrientation.HORIZONTAL,
-                true,
+        JFreeChart graficoDeBarrasChart = ChartFactory.createBarChart(this.titulo, 
+                this.tituloHorizontal,
+                this.tituloVertical,
+                dataset,
+                this.orientacao,
+                this.legenda,
                 false,
                 false);
         
-        this.graficoDeBarras.setGrafico(graficoDeBarrasChart);
-    }
-
-    public GraficoDeBarras getGraficoDeBarras() {
-        return graficoDeBarras;
+        this.graficoDeBarras = graficoDeBarrasChart;
     }
 
     

@@ -1,26 +1,34 @@
 package com.mycompany.builder;
 
+import com.mycompany.model.GraficoDeBarras;
 import com.mycompany.model.Pessoa;
 import java.util.ArrayList;
+import org.jfree.chart.plot.PlotOrientation;
 
 
 public class Diretor {
     
-    private IBuilder builder;
+    private Builder builder;
 
-    public Diretor(IBuilder builder) {
+    public Diretor(Builder builder) {
         this.builder = builder;
     }
     
-    public void changeBuilder(IBuilder builder) {
+    public void changeBuilder(Builder builder) {
         this.builder = builder;
     }
     
-    public void criarGrafico(ArrayList<Pessoa> pessoas){
+    public GraficoDeBarras criarGrafico(ArrayList<Pessoa> pessoas){
         
-        builder.reset();
+        builder.setTitulo(" ");
+        builder.setTituloHorizontal(" ");
+        builder.setTituloVertical(" ");
         builder.criarDataset(pessoas);
+        builder.setOrientacao(PlotOrientation.HORIZONTAL);
+        builder.setLegenda(false);
         builder.criarGrafico();
+        
+        return builder.getGraficoDeBarras();
         
     }
 }

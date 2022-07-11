@@ -14,6 +14,15 @@ public abstract class AbstractGrafico {
     protected boolean legenda;
     
     
+
+    public AbstractGrafico(String titulo, String tituloHorizontal, String tituloVertical, PlotOrientation orientacao, boolean legenda) {
+        this.titulo = titulo;
+        this.tituloHorizontal = tituloHorizontal;
+        this.tituloVertical = tituloVertical;
+        this.orientacao = orientacao;
+        this.legenda = legenda;
+    }    
+    
     
 
     public String getTitulo() {
