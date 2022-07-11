@@ -2,7 +2,6 @@ package com.mycompany.view;
 
 import com.mycompany.builder.Diretor;
 import com.mycompany.builder.GraficoDeBarrasBuilder;
-import com.mycompany.builder.GraficoPizzaBuilder;
 import com.mycompany.loader.LeitorCSV;
 import com.mycompany.model.Pessoa;
 import java.awt.BorderLayout;
@@ -18,7 +17,7 @@ public class GraficoTesteView extends javax.swing.JFrame {
     public GraficoTesteView() {
         initComponents();
         
-        GraficoPizzaBuilder builder = new GraficoPizzaBuilder();
+        GraficoDeBarrasBuilder builder = new GraficoDeBarrasBuilder();
         
         Diretor diretor = new Diretor(builder);
         
@@ -26,7 +25,7 @@ public class GraficoTesteView extends javax.swing.JFrame {
         
         diretor.criarGrafico(pessoas);
         
-        ChartPanel painel = new ChartPanel(builder.getGraficoPizza().getGraficoPizza());
+        ChartPanel painel = new ChartPanel(builder.getGraficoDeBarras().getGraficoDeBarras());
         
         
         this.jpnGrafico.setLayout(new BorderLayout());

@@ -6,17 +6,38 @@ import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 
 public class GraficoDeBarrasBuilder implements IBuilder {
     
-    private GraficoDeBarras graficoDeBarras;
+    private String titulo;
+    private boolean legenda;
+    private String tituloVertical;
+    private String tituloHorizontal;
+    private CategoryDataset dataset = new DefaultCategoryDataset();
+    private PlotOrientation orientacao;
     
 
     @Override
     public void reset() {
         this.graficoDeBarras = new GraficoDeBarras();
+    }
+    
+    @Override
+    public void setTitulo(String titulo) {
+        graficoDeBarras.
+    }
+
+    @Override
+    public void setTituloVertical(String tituloVertical) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void setTituloHorizontal(String tituloHorizontal) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
@@ -48,6 +69,16 @@ public class GraficoDeBarrasBuilder implements IBuilder {
         this.graficoDeBarras.setDataset(dataset);
         
     }
+    
+    @Override
+    public void setOrientacao(PlotOrientation orientacao) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    @Override
+    public void setLegenda(boolean legenda) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     @Override
     public void criarGrafico() {
@@ -61,12 +92,13 @@ public class GraficoDeBarrasBuilder implements IBuilder {
                 false,
                 false);
         
-        this.graficoDeBarras.setGraficoDeBarras(graficoDeBarrasChart);
+        this.graficoDeBarras.setGrafico(graficoDeBarrasChart);
     }
 
     public GraficoDeBarras getGraficoDeBarras() {
         return graficoDeBarras;
     }
+
     
     
 }
