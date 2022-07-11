@@ -2,7 +2,10 @@ package com.mycompany.view;
 
 import com.mycompany.builder.Diretor;
 import com.mycompany.builder.GraficoDeBarrasBuilder;
+import com.mycompany.decorator.GraficoDecorator;
+import com.mycompany.decorator.TituloDecorator;
 import com.mycompany.loader.LeitorCSV;
+import com.mycompany.model.GraficoDeBarras;
 import com.mycompany.model.Pessoa;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
@@ -23,9 +26,15 @@ public class GraficoTesteView extends javax.swing.JFrame {
         
         ArrayList<Pessoa> pessoas = new LeitorCSV().lerArquivo("pessoas.csv");
         
-        diretor.criarGrafico(pessoas);
+        GraficoDeBarras grafico = diretor.criarGrafico(pessoas);
         
-        ChartPanel painel = new ChartPanel(diretor.criarGrafico(pessoas).getGrafico());
+        ChartPanel painel = new ChartPanel(grafico.getGrafico());
+        
+        GraficoDecorator titulo = new TituloDecorator(grafico, "Titulo Teste");
+        
+        grafico.setGrafico(titulo.decorarGrafico(grafico.getDataset()));
+        
+        painel = new ChartPanel(grafico.getGrafico());
         
         
         this.jpnGrafico.setLayout(new BorderLayout());

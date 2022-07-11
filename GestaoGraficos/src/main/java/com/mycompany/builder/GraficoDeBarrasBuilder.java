@@ -1,12 +1,10 @@
 package com.mycompany.builder;
 
-import com.mycompany.model.GraficoDeBarras;
 import com.mycompany.model.Pessoa;
 import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 
@@ -50,10 +48,10 @@ public class GraficoDeBarrasBuilder extends Builder {
                 casF++;
         }
         
-        dataset.addValue(soltM, "Homem Solteiro(a)", "");
-        dataset.addValue(soltF, "Mulher Solteiro(a)", "");
-        dataset.addValue(casM, "Homem Casado(a)", "");
-        dataset.addValue(casF, "Mulher Casado(a)", "");
+        dataset.addValue(soltM, "Homens Solteiros", "");
+        dataset.addValue(soltF, "Mulheres Solteiras", "");
+        dataset.addValue(casM, "Homens Casados", "");
+        dataset.addValue(casF, "Mulheres Casadas", "");
         
     }
     

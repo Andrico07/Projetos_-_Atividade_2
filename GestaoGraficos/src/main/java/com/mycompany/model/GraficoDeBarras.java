@@ -10,15 +10,14 @@ public class GraficoDeBarras extends AbstractGrafico {
 
     private CategoryDataset dataset;
     private JFreeChart grafico;
+    
+    
 
     public GraficoDeBarras(String titulo, String tituloHorizontal, String tituloVertical, CategoryDataset dataset, PlotOrientation orientacao, boolean legenda, JFreeChart grafico) {
         super(titulo, tituloHorizontal, tituloVertical, orientacao, legenda);
         this.dataset = dataset;
         this.grafico = grafico;
     }
-    
-    
-
     
 
     public CategoryDataset getDataset() {
