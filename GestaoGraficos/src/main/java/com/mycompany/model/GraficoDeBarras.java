@@ -1,5 +1,7 @@
 package com.mycompany.model;
 
+import java.awt.Dimension;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
@@ -8,38 +10,18 @@ import org.jfree.data.category.CategoryDataset;
 public class GraficoDeBarras extends AbstractGrafico {
     
 
-    private CategoryDataset dataset;
-    private JFreeChart grafico;
-    
-    
-
     public GraficoDeBarras(String titulo, String tituloHorizontal, String tituloVertical, CategoryDataset dataset, PlotOrientation orientacao, boolean legenda, JFreeChart grafico) {
-        super(titulo, tituloHorizontal, tituloVertical, orientacao, legenda);
-        this.dataset = dataset;
-        this.grafico = grafico;
-    }
-    
-
-    public CategoryDataset getDataset() {
-        return dataset;
+        super(titulo, tituloHorizontal, tituloVertical, dataset, orientacao, legenda, grafico);
     }
 
-
-    public void setDataset(CategoryDataset dataset) {
-        this.dataset = dataset;
+    @Override
+    public ChartPanel exibirGrafico() {
+        
+        ChartPanel painel = new ChartPanel(grafico);
+        painel.setPreferredSize(new Dimension(800, 640));
+        
+        return painel;
     }
-
-
-    public JFreeChart getGrafico() {
-        return grafico;
-    }
-
-
-    public void setGrafico(JFreeChart grafico) {
-        this.grafico = grafico;
-    }
-    
-    
     
 
     
