@@ -13,6 +13,7 @@ import com.mycompany.view.MainView;
 import java.awt.BorderLayout;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Stack;
 import org.jfree.chart.plot.PlotOrientation;
 
 
@@ -20,6 +21,7 @@ public class MainPresenter {
     
     private MainView view;
     private AbstractGrafico grafico;
+    private Stack<AbstractGrafico> graficosAnteriores;
     private ArrayList<Pessoa> pessoas;
     private Diretor diretor;
     
@@ -36,6 +38,7 @@ public class MainPresenter {
         pessoas = new LeitorCSV().lerArquivo("pessoas.csv");
         diretor = new Diretor(new GraficoDeBarrasBuilder());
         grafico = diretor.criarGrafico(pessoas);
+        graficosAnteriores = new Stack<>();
         
         view.getPnlGrafico().setLayout(new BorderLayout());
         view.getPnlGrafico().add(grafico.exibirGrafico());
@@ -94,6 +97,7 @@ public class MainPresenter {
             clearCkbBoxes();            
             view.getCmbxGraficosPadrao().setSelectedIndex(0);
             
+            graficosAnteriores.push(grafico);            
             grafico = diretor.criarGrafico(pessoas);
             atualizarGrafico();
             
@@ -105,6 +109,11 @@ public class MainPresenter {
     
     public void desfazer() {
         
+        if(!graficosAnteriores.empty()) {
+            grafico = graficosAnteriores.pop();
+            atualizarGrafico();
+        }
+        
     }
     
     public void trocarPadraoGrafico() {
@@ -113,6 +122,7 @@ public class MainPresenter {
             switch (view.getCmbxGraficosPadrao().getSelectedItem().toString()) {
                 case "Barras Horizontais":
                     
+                    graficosAnteriores.push(grafico);                    
                     grafico = diretor.criarGrafico(pessoas);
                     clearCkbBoxes();
                     atualizarGrafico();
@@ -120,6 +130,7 @@ public class MainPresenter {
                 
                 case "Barras Verticais":
                     
+                    graficosAnteriores.push(grafico);                    
                     grafico = diretor.criarGrafico(pessoas);
                     grafico = new OrientacaoDecorator(grafico, PlotOrientation.VERTICAL);
                     clearCkbBoxes();
@@ -137,10 +148,12 @@ public class MainPresenter {
         
         try {
             if(view.getCkbTitulo().isSelected()) {
+                graficosAnteriores.push(grafico);
                 grafico = new TituloDecorator(grafico, "Grafico Pessoas");
                 atualizarGrafico();
                 
             } else {
+                graficosAnteriores.push(grafico);
                 grafico = new TituloDecorator(grafico, " ");
                 atualizarGrafico();
             }
@@ -155,10 +168,12 @@ public class MainPresenter {
         
         try {
             if(view.getCkbLegenda().isSelected()) {
+                graficosAnteriores.push(grafico);
                 grafico =  new LegendaDecorator(grafico, true);
                 atualizarGrafico();
                 
             } else {
+                graficosAnteriores.push(grafico);
                 grafico = new LegendaDecorator(grafico, false);
                 atualizarGrafico();
             }
@@ -172,10 +187,12 @@ public class MainPresenter {
         
         try {
             if(view.getCkbTituloEixos().isSelected()) {
+                graficosAnteriores.push(grafico);
                 grafico = new TituloDosEixosDecorator(grafico, "Horizontal", "Vertical");
                 atualizarGrafico();
                 
             } else {
+                graficosAnteriores.push(grafico);
                 grafico = new TituloDosEixosDecorator(grafico, " ", " ");
                 atualizarGrafico();
             }
