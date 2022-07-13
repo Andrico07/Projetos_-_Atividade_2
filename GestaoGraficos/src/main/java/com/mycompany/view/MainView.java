@@ -44,6 +44,8 @@ public class MainView extends javax.swing.JFrame {
         cmbxGraficosPadrao = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gráfico");
+        setResizable(false);
 
         javax.swing.GroupLayout pnlGraficoLayout = new javax.swing.GroupLayout(pnlGrafico);
         pnlGrafico.setLayout(pnlGraficoLayout);
@@ -109,15 +111,15 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ckbCorBarrasGrupo)
-                    .addComponent(ckbTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckbLegendas, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ckbTituloEixos)
                     .addComponent(ckbRotuloValor)
                     .addComponent(ckbRotuloValorPorcento)
                     .addComponent(ckbRotuloPorcento)
                     .addComponent(ckbCorBarras)
                     .addComponent(ckbGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelElementos, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelElementos, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ckbTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ckbLegendas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
         pnlElementosLayout.setVerticalGroup(
