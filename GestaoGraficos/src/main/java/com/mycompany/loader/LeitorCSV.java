@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import com.mycompany.model.Pessoa;
+import java.io.IOException;
 
 
 public class LeitorCSV {
@@ -25,8 +26,8 @@ public class LeitorCSV {
                 Pessoa pessoa = new Pessoa(data[0], data[1], data[2]);
                 pessoas.add(pessoa);
             }
-        } catch (Exception e) {
-            System.out.println("Erro " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Erro ao abrir o arquivo" + e.getMessage());
         }
         
         return pessoas;
