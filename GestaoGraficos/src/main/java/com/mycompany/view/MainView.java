@@ -3,7 +3,6 @@ package com.mycompany.view;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
@@ -282,135 +281,59 @@ public class MainView extends javax.swing.JFrame {
         return btnDesfazer;
     }
 
-    public void setBtnDesfazer(JButton btnDesfazer) {
-        this.btnDesfazer = btnDesfazer;
-    }
-
     public JButton getBtnFechar() {
         return btnFechar;
-    }
-
-    public void setBtnFechar(JButton btnFechar) {
-        this.btnFechar = btnFechar;
     }
 
     public JButton getBtnRestaurar() {
         return btnRestaurar;
     }
 
-    public void setBtnRestaurar(JButton btnRestaurar) {
-        this.btnRestaurar = btnRestaurar;
-    }
-
     public JCheckBox getCkbCorBarras() {
         return ckbCorBarras;
-    }
-
-    public void setCkbCorBarras(JCheckBox ckbCorBarras) {
-        this.ckbCorBarras = ckbCorBarras;
     }
 
     public JCheckBox getCkbCorBarrasGrupo() {
         return ckbCorBarrasGrupo;
     }
 
-    public void setCkbCorBarrasGrupo(JCheckBox ckbCorBarrasGrupo) {
-        this.ckbCorBarrasGrupo = ckbCorBarrasGrupo;
-    }
-
     public JCheckBox getCkbGrade() {
         return ckbGrade;
-    }
-
-    public void setCkbGrade(JCheckBox ckbGrade) {
-        this.ckbGrade = ckbGrade;
     }
 
     public JCheckBox getCkbLegenda() {
         return ckbLegendas;
     }
 
-    public void setCkbLegenda(JCheckBox ckbLegenda) {
-        this.ckbLegendas = ckbLegenda;
-    }
-
     public JCheckBox getCkbRotuloPorcento() {
         return ckbRotuloPorcento;
-    }
-
-    public void setCkbRotuloPorcento(JCheckBox ckbRotuloPorcento) {
-        this.ckbRotuloPorcento = ckbRotuloPorcento;
     }
 
     public JCheckBox getCkbRotuloValor() {
         return ckbRotuloValor;
     }
 
-    public void setCkbRotuloValor(JCheckBox ckbRotuloValor) {
-        this.ckbRotuloValor = ckbRotuloValor;
-    }
-
     public JCheckBox getCkbRotuloValorPorcento() {
         return ckbRotuloValorPorcento;
-    }
-
-    public void setCkbRotuloValorPorcento(JCheckBox ckbRotuloValorPorcento) {
-        this.ckbRotuloValorPorcento = ckbRotuloValorPorcento;
     }
 
     public JCheckBox getCkbTitulo() {
         return ckbTitulo;
     }
 
-    public void setCkbTitulo(JCheckBox ckbTitulo) {
-        this.ckbTitulo = ckbTitulo;
-    }
-
     public JCheckBox getCkbTituloEixos() {
         return ckbTituloEixos;
-    }
-
-    public void setCkbTituloEixos(JCheckBox ckbTituloEixos) {
-        this.ckbTituloEixos = ckbTituloEixos;
     }
 
     public JComboBox<String> getCmbxGraficosPadrao() {
         return cmbxGraficosPadrao;
     }
 
-    public void setCmbxGraficosPadrao(JComboBox<String> cmbxGraficosPadrao) {
-        this.cmbxGraficosPadrao = cmbxGraficosPadrao;
-    }
-
-    public JLabel getLabelElementos() {
-        return labelElementos;
-    }
-
-    public void setLabelElementos(JLabel labelElementos) {
-        this.labelElementos = labelElementos;
-    }
-
-    public JLabel getLabelGraficosPadrao() {
-        return labelGraficosPadrao;
-    }
-
-    public void setLabelGraficosPadrao(JLabel labelGraficosPadrao) {
-        this.labelGraficosPadrao = labelGraficosPadrao;
-    }
-
     public JPanel getPnlElementos() {
         return pnlElementos;
     }
 
-    public void setPnlElementos(JPanel pnlElementos) {
-        this.pnlElementos = pnlElementos;
-    }
-
     public JPanel getPnlGrafico() {
         return pnlGrafico;
-    }
-
-    public void setPnlGrafico(JPanel pnlGrafico) {
-        this.pnlGrafico = pnlGrafico;
     }
 }

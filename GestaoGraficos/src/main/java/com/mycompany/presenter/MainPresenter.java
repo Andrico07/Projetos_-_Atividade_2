@@ -149,8 +149,7 @@ public class MainPresenter {
         try {
             if(view.getCkbTitulo().isSelected()) {
                 graficosAnteriores.push(grafico);
-                grafico = new TituloDecorator(grafico, "Grafico Pessoas");
-                atualizarGrafico();
+                new TituloPresenter(this);
                 
             } else {
                 graficosAnteriores.push(grafico);
@@ -188,8 +187,7 @@ public class MainPresenter {
         try {
             if(view.getCkbTituloEixos().isSelected()) {
                 graficosAnteriores.push(grafico);
-                grafico = new TituloDosEixosDecorator(grafico, "Horizontal", "Vertical");
-                atualizarGrafico();
+                new TituloEixosPresenter(this);
                 
             } else {
                 graficosAnteriores.push(grafico);
@@ -220,7 +218,18 @@ public class MainPresenter {
         view.getCkbTituloEixos().setSelected(false);
         
     }
-    
-    
+
+    public AbstractGrafico getGrafico() {
+        return grafico;
+    }
+
+    public void decorateGrafico(AbstractGrafico grafico) {
+        this.grafico = grafico;
+    }
+
+    public MainView getView() {
+        return view;
+    }
+
     
 }
