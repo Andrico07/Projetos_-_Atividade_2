@@ -196,7 +196,7 @@ public class MainPresenter {
             }
         
         } catch (Exception e) {
-                    throw new RuntimeException ("Erro ao adicionar título" + e.getMessage());
+            throw new RuntimeException ("Erro ao adicionar título" + e.getMessage());
         }
     }
     
