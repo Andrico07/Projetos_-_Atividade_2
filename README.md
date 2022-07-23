@@ -1,5 +1,5 @@
 # Projetos_-_Atividade_2
- Projeto de Sistemas de Software(COM10508 - CC) - Atividade Extra
+ Projeto de Sistemas de Software(COM10508 - CC) - Atividade avaliativa 2
  Universidade Federal do Espiríto Santo
 
  Alunos   
